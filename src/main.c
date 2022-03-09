@@ -7,6 +7,8 @@
 #include "../include/input.h"
 #include "../include/errors.h"
 
+#define RESET_COLOR "\e[m"
+
 int main() {
     char **command;
     char *input;
@@ -14,7 +16,8 @@ int main() {
     int stat_loc;
 
     while (1) {
-        input = readline("unixsh> ");
+        printf(RESET_COLOR);
+        input = readline("Csh> ");
         command = get_input(input);
 
         if (strcmp(command[0], "cd") == 0) {
@@ -22,6 +25,16 @@ int main() {
                 cd_err(command[1]);
             }
 
+            continue;
+        }
+
+        if (strcmp(command[0], "ls") == 0) {
+            function_ls();
+            continue;
+        }
+        
+        if (strcmp(command[0], "about") == 0){
+            about();
             continue;
         }
 
@@ -36,7 +49,6 @@ int main() {
             if (execvp(command[0], command) < 0) {
                 execvp_err(&command[0]);
             }
-            printf("This won't be printed if execvp is successul\n");
         } else {
             waitpid(child_pid, &stat_loc, WUNTRACED);
         }

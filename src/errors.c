@@ -2,8 +2,10 @@
 #include <string.h>
 #include "../include/errors.h"
 
+#define CYAN "\x1b[96m"
+
 void fork_err(){
-    perror("Fork failed");
+    perror(CYAN "+--- Error in fork");
     exit(1);
 }
 
@@ -17,6 +19,10 @@ void cd_err(char *command){
 }
 
 void malloc_err(){
-    perror("malloc failed");
+    perror(CYAN "+--- Error in malloc");
     exit(1);
+}
+
+void ls_err(){
+    perror(CYAN "+--- Error in ls");
 }

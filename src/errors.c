@@ -24,5 +24,7 @@ void malloc_err(){
 }
 
 void ls_err(){
-    perror(CYAN "+--- Error in ls");
+    printf("\033[0;31mError: Invalid or Unaccessible Directory\033[0m\n");
+    perror("ls: ");
+    return;
 }

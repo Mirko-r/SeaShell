@@ -5,7 +5,7 @@
 
 ```
 cd src
-gcc -o csh main.c input.c errors.c -lreadline
+gcc -o csh src/* -lreadline
 ```
 
 ## Contributing

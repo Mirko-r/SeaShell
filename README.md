@@ -1,12 +1,18 @@
 # Csh
-## A fast and simple UNIX shell in C
+### A fast and simple UNIX shell in C
 
-### build
+## build
 
 ```
 cd src
 gcc -o csh src/* -lreadline
 ```
+## Builtins
+
+| Command              | Function                                                               |
+| -------------------- | ---------------------------------------------------------------------- |
+| `ls`| Same as ls but try to do better      |
+| `about `| Print Csh info       	|
 
 ## Contributing
 

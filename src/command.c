@@ -27,13 +27,8 @@ SOFTWARE.
 void cd(char *path) {
     if (path == NULL){
         chdir (getenv ("HOME"));
-    }else{
-        if(chdir(path) == -1){
-            cd_err(path);
-        } 
-        else{
-            chdir (path);
-        }       
+    }else if(chdir(path) == -1){
+            cd_err(path);     
     }
 }
 

@@ -17,6 +17,7 @@ SOFTWARE.
 
 void cd(char *path);
 void function_clear();
+void pcd();
 void about();
 
 #endif

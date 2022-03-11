@@ -13,7 +13,7 @@ make install
 
 | Command              | Function                                                               |
 | -------------------- | ---------------------------------------------------------------------- |
-| `ls`| Same as ls but try to do better      |
+| `pcd`| Print Current Directory      |
 | `about `| Print Csh info       	|
 
 ## Contributing

@@ -6,6 +6,7 @@
 #include <sys/wait.h>
 #include "../include/input.h"
 #include "../include/errors.h"
+#include "../include/command.h"
 
 #define RESET_COLOR "\e[m"
 
@@ -27,6 +28,11 @@ int main() {
                 cd_err(&command[1]);
             }
 
+            continue;
+        }
+
+        if(strcmp(command[0], "pcd") == 0){
+            pcd();
             continue;
         }
         

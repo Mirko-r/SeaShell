@@ -10,7 +10,6 @@
 #define BLUE "\x1b[94m"
 #define DEF "\x1B[0m"
 #define CYAN "\x1b[96m"
-#define VERSION "0.0.2-alpha"
 
 char **get_input(char *input) {
     char **command = malloc(8 * sizeof(char *));
@@ -33,23 +32,6 @@ char **get_input(char *input) {
     return command;
 }
 
-int cd(char *path) {
-
-    return chdir(path);
-    
-}
-
-void function_clear(){
-    const char* blank = "\e[1;1H\e[2J";
-    write(STDOUT_FILENO,blank,12);
-}
-
-void about(){
-    // Source - http://ascii.co.uk/art/seashell
-    char* descr = "           _.-''|''-._\n        .-'     |     `-.\n      .'\\       |       /`.\n    .'   \\      |      /   `.        Cshell v " VERSION"\n    \\     \\     |     /     /        Made by @Mirko-r\n     `\\    \\    |    /    /'\n       `\\   \\   |   /   /'\n         `\\  \\  |  /  /'\n        _.-`\\ \\ | / /'-._ \n       {_____`\\\\|//'_____}\n               `-'\n\n";
-
-    printf("%s",descr);
-}
 /* Just a fancy name printing function*/
 void nameFile(struct dirent* name,char* followup){
     if(name->d_type == DT_REG)          // regular file

@@ -1,7 +1,7 @@
 /*
 Cshell :A fast and simple UNIX shell in C
 
-command.h : command.c header file
+command.h : command.c header
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -15,7 +15,7 @@ SOFTWARE.
 #ifndef __COMMAND_H
 #define __COMMAND_H
 
-int cd(char *path);
+void cd(char *path);
 void function_clear();
 void about();
 

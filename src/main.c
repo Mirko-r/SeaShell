@@ -33,15 +33,12 @@ int main() {
     while (1) {
         printf(RESET_COLOR);
         input = readline("\nCsh> ");
-	if(input != NULL) { //check if EOF
-		command = get_input(input);
-	}else return 0; //^D to exit
+	    if(input != NULL) { //check if EOF
+		    command = get_input(input);
+	    }else return 0; //^D to exit
 
         if (strcmp(command[0], "cd") == 0) {
-            if (cd(command[1]) < 0) {
-                cd_err(&command[1]);
-            }
-
+            cd(command[1]); 
             continue;
         }
 

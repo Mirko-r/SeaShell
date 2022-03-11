@@ -24,8 +24,17 @@ SOFTWARE.
 #define BLUE "\x1b[94m"
 #define RESET_COLOR "\e[m"
 
-int cd(char *path) {
-    return chdir(path);
+void cd(char *path) {
+    if (path == NULL){
+        chdir (getenv ("HOME"));
+    }else{
+        if(chdir(path) == -1){
+            cd_err(path);
+        } 
+        else{
+            chdir (path);
+        }       
+    }
 }
 
 void function_clear(){

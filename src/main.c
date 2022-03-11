@@ -18,7 +18,9 @@ int main() {
     while (1) {
         printf(RESET_COLOR);
         input = readline("Csh> ");
-        command = get_input(input);
+	if(input != NULL) { //check if EOF
+		command = get_input(input);
+	}else return 0; //^D to exit
 
         if (strcmp(command[0], "cd") == 0) {
             if (cd(command[1]) < 0) {

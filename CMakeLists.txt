@@ -12,7 +12,9 @@ set(SRC ${PROJECT_SOURCE_DIR}/src)
 set(EXECUTABLE_OUTPUT_PATH bin)
 
 # find files
-file(GLOB_RECURSE source_files ${SRC}/*)
+file(GLOB_RECURSE source_files 
+	${SRC}/*)
+
 
 # csh executable
 add_executable(

@@ -31,7 +31,7 @@ int main() {
             continue;
         }
 
-        if(strcmp(command[0], "pcd") == 0){
+        if(strcmp(command[0], "pcd") == 0 || strcmp(command[0], "pwd") == 0){
             pcd();
             continue;
         }

@@ -3,7 +3,7 @@
 
 char **get_input(char *input);
 int cd(char *path);
-int function_ls();
+void function_clear();
 void about();
 
 #endif

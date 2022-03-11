@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include "../include/errors.h"
 
@@ -14,7 +15,7 @@ void execvp_err(char **command){
     exit(1);
 }
 
-void cd_err(char *command){
+void cd_err(char **command){
     perror(command[1]);
 }
 

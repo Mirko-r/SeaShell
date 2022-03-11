@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 #include <dirent.h>
 #include "../include/input.h"
 #include "../include/errors.h"
@@ -9,7 +10,7 @@
 #define BLUE "\x1b[94m"
 #define DEF "\x1B[0m"
 #define CYAN "\x1b[96m"
-#define VERSION "0.0.1"
+#define VERSION "0.0.2-alpha"
 
 char **get_input(char *input) {
     char **command = malloc(8 * sizeof(char *));
@@ -32,33 +33,15 @@ char **get_input(char *input) {
     return command;
 }
 
-int function_ls(){
-    int i=0;
-    struct dirent **listr;
-    int listn = scandir(".", &listr, 0, alphasort);
-    if (listn >= 0){
-        printf("%s+--- Total %d objects in this directory\n",CYAN,listn-2);
-        for(i = 0; i < listn; i++ )
-        {
-            if(strcmp(listr[i]->d_name,".")==0 || strcmp(listr[i]->d_name,"..")==0)
-            {
-                continue;
-            }
-            else nameFile(listr[i],"    ");
-            if(i%8==0) printf("\n");
-        }
-        printf("\n");
-    }
-    else{
-        ls_err();
-    }
+int cd(char *path) {
 
-    return listn;
-
+    return chdir(path);
+    
 }
 
-int cd(char *path) {
-    return chdir(path);
+void function_clear(){
+    const char* blank = "\e[1;1H\e[2J";
+    write(STDOUT_FILENO,blank,12);
 }
 
 void about(){
@@ -67,7 +50,6 @@ void about(){
 
     printf("%s",descr);
 }
-
 /* Just a fancy name printing function*/
 void nameFile(struct dirent* name,char* followup){
     if(name->d_type == DT_REG)          // regular file

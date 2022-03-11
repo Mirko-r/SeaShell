@@ -6,6 +6,7 @@
 #include <sys/wait.h>
 #include "../include/input.h"
 #include "../include/errors.h"
+#include "../include/ls.h"
 
 #define RESET_COLOR "\e[m"
 
@@ -24,14 +25,9 @@ int main() {
 
         if (strcmp(command[0], "cd") == 0) {
             if (cd(command[1]) < 0) {
-                cd_err(command[1]);
+                cd_err(&command[1]);
             }
 
-            continue;
-        }
-
-        if (strcmp(command[0], "ls") == 0) {
-            function_ls();
             continue;
         }
         
@@ -42,6 +38,11 @@ int main() {
 
         if (strcmp(command[0], "exit") == 0){
             return 0;
+        }
+
+        if(strcmp(command[0], "clear") == 0){
+            function_clear();
+            continue;
         }
 
         child_pid = fork();

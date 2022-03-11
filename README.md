@@ -4,8 +4,8 @@
 ## build
 
 ```
-cd src
-gcc -o csh src/* -lreadline
+cd build
+make install
 ```
 ## Builtins
 

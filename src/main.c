@@ -6,7 +6,6 @@
 #include <sys/wait.h>
 #include "../include/input.h"
 #include "../include/errors.h"
-#include "../include/ls.h"
 
 #define RESET_COLOR "\e[m"
 

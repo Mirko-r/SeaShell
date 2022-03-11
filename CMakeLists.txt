@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.1)
 project(csh)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
@@ -20,4 +20,6 @@ file(GLOB_RECURSE source_files
 add_executable(
   csh
   ${source_files}
-  )
+)
+
+install(TARGETS csh DESTINATION bin)

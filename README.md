@@ -7,7 +7,7 @@
 mkdir build
 cd build
 cmake ..
-make install
+sudo make install
 ```
 ## Builtins
 

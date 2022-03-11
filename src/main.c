@@ -38,6 +38,10 @@ int main() {
             continue;
         }
 
+        if (strcmp(command[0], "exit") == 0){
+            return 0;
+        }
+
         child_pid = fork();
 
         if (child_pid < 0) {

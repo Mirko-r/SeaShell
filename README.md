@@ -5,6 +5,7 @@
 
 ```
 cd build
+cmake ..
 make install
 ```
 ## Builtins

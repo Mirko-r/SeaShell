@@ -3,6 +3,9 @@
 #include <string.h>
 #include <unistd.h>
 #include <dirent.h>
+#include <stdbool.h>
+
+
 /*
 Cshell :A fast and simple UNIX shell in C
 
@@ -60,4 +63,9 @@ void nameFile(struct dirent* name,char* followup){
     {
         printf("%s%s%s",CYAN, name->d_name, followup);
     }
+}
+
+int strinclude(char *string, char *substring)
+{
+    return strstr(string, substring) ? true : false;
 }

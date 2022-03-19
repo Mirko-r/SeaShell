@@ -16,5 +16,7 @@ SOFTWARE.
 #define __INPUT_H
 
 char **get_input(char *input);
+// Returns 1 (true) if the string includes the substring or else  returns 0 (false)
+int strinclude(char *string, char *substring);
 
 #endif

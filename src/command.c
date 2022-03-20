@@ -21,7 +21,6 @@ SOFTWARE.
 
 #define VERSION "0.0.3-alpha"
 
-#define GREEN "\x1b[92m"
 #define BLUE "\x1b[94m"
 #define RESET_COLOR "\e[m"
 
@@ -42,7 +41,7 @@ void function_clear(){
 void pcd(){
     char cwd[1024];
     getcwd(cwd, sizeof(cwd));
-    printf("\n%sCurrent Dir: %s%s\n",BLUE, GREEN, cwd);
+    printf("%s\n",cwd);
 }
 
 void about(){

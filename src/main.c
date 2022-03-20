@@ -23,6 +23,8 @@ SOFTWARE.
 #include "../include/command.h"
 
 #define RESET_COLOR "\e[m"
+#define GREEN "\x1b[92m"
+#define BLUE "\x1b[94m"
 
 int main() {
     char **command;
@@ -33,9 +35,12 @@ int main() {
     while (1) {
         printf(RESET_COLOR);
         input = readline("\nCsh> ");
+
 	    if(input != NULL) { //check if EOF
 		    command = get_input(input);
 	    }else return 0; //^D to exit
+
+        //Wich command?
 
         if (strcmp(command[0], "cd") == 0) {
             cd(command[1]); 
@@ -43,6 +48,7 @@ int main() {
         }
 
         if(strcmp(command[0], "pcd") == 0 || strcmp(command[0], "pwd") == 0){
+            printf("\n%sCurrent Dir: %s",BLUE, GREEN);
             pcd();
             continue;
         }
@@ -60,6 +66,8 @@ int main() {
             function_clear();
             continue;
         }
+
+        //Execute the command
 
         child_pid = fork();
 

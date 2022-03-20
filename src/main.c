@@ -21,6 +21,7 @@ SOFTWARE.
 #include "../include/input.h"
 #include "../include/errors.h"
 #include "../include/command.h"
+#include "../include/history.h"
 
 #define RESET_COLOR "\e[m"
 #define GREEN "\x1b[92m"
@@ -32,12 +33,15 @@ int main() {
     pid_t child_pid;
     int stat_loc;
 
+    initalize_history();
+
     while (1) {
         printf(RESET_COLOR);
         input = readline("\nCsh> ");
 
 	    if(input != NULL) { //check if EOF
 		    command = get_input(input);
+            add_to_history(input);
 	    }else return 0; //^D to exit
 
         //Wich command?
@@ -55,6 +59,11 @@ int main() {
         
         if (strcmp(command[0], "about") == 0){
             about();
+            continue;
+        }
+
+        if(strcmp(command[0], "history") == 0){
+            print_history();
             continue;
         }
 

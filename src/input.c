@@ -1,11 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-#include <dirent.h>
-#include <stdbool.h>
-
-
 /*
 Cshell :A fast and simple UNIX shell in C
 
@@ -20,6 +12,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <dirent.h>
+#include <stdbool.h>
 #include "../include/input.h"
 #include "../include/errors.h"
 

@@ -44,7 +44,8 @@ int main() {
             add_to_history(input);
 	    }else return 0; //^D to exit
 
-        //Wich command?
+        //Which command?
+
         if (strcmp(command[0], "cd") == 0) {
             cd(command[1]); 
             continue;

@@ -19,7 +19,8 @@ SOFTWARE.
 #include <dirent.h>
 #include "../include/command.h"
 
-#define VERSION "0.0.2-alpha"
+#define VERSION "0.0.3-alpha"
+
 #define GREEN "\x1b[92m"
 #define BLUE "\x1b[94m"
 #define RESET_COLOR "\e[m"

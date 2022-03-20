@@ -65,7 +65,6 @@ void nameFile(struct dirent* name,char* followup){
     }
 }
 
-int strinclude(char *string, char *substring)
-{
+int strinclude(char *string, char *substring){
     return strstr(string, substring) ? true : false;
 }

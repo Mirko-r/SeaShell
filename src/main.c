@@ -22,6 +22,7 @@ SOFTWARE.
 #include "../include/errors.h"
 #include "../include/command.h"
 #include "../include/history.h"
+#include "../CLI-Autocomplete/include/autocomplete.h"
 
 #define RESET_COLOR "\e[m"
 #define GREEN "\x1b[92m"
@@ -34,15 +35,30 @@ int main() {
     int stat_loc;
     
     initalize_history();
+    Tree* rules = tree_create("../../../../example.config");
 
     while (1) {
+        char* str = input(rules);
+        printf("\n%s\n", str);
+
+        // Stop listening if user need
+        if (strcmp(str, "") == 0) {
+            free(str);
+            break;
+        }
+
+        // Free user input string
+        free(str);
+	
+
+
         printf(RESET_COLOR);
         input = readline("\nCsh> ");
 
-	    if(input != NULL) { //check if EOF
-		    command = get_input(input);
-            add_to_history(input);
-	    }else return 0; //^D to exit
+	if(input != NULL) { //check if EOF
+		command = get_input(input);
+        add_to_history(input);
+	}else return 0; //^D to exit
 
         //Which command?
 
@@ -106,6 +122,7 @@ int main() {
         free(input);
         free(command);
     }
+    tree_free(rules);
 
     return 0;
 }

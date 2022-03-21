@@ -14,6 +14,7 @@ sudo make install
 | Command              | Function                                                               |
 | -------------------- | ---------------------------------------------------------------------- |
 | `pcd`| Print Current Directory      |
+| `mc`| mkdir "/some/path" and cd into it      |
 | `about `| Print Csh info       	|
 
 ## Contributing

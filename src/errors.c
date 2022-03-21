@@ -43,3 +43,8 @@ void ls_err(){
     perror(CYAN "ls: ");
     return;
 }
+
+void unexisting_dir(){
+    perror(CYAN "+--- Directory does not exist");
+    return;
+}

@@ -18,6 +18,9 @@ SOFTWARE.
 #include <unistd.h>
 #include <dirent.h>
 #include <stdbool.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 #include "../include/input.h"
 #include "../include/errors.h"
 
@@ -25,6 +28,9 @@ SOFTWARE.
 #define BLUE "\x1b[94m"
 #define DEF "\x1B[0m"
 #define CYAN "\x1b[96m"
+
+struct stat st = {0};
+
 
 char **get_input(char *input) {
     char **command = malloc(8 * sizeof(char *));
@@ -65,4 +71,12 @@ void nameFile(struct dirent* name,char* followup){
 
 int strinclude(char *string, char *substring){
     return strstr(string, substring) ? true : false;
+}
+
+bool is_an_existing_dir(char *path){
+    if(stat(path, &st) == -1){
+        return true;
+    }else{
+        return false;
+    }
 }

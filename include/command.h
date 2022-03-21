@@ -18,6 +18,7 @@ SOFTWARE.
 void cd(char *path);
 void function_clear();
 void pcd();
+void mc(char *path); //mkdir and cd
 void about();
 
 #endif

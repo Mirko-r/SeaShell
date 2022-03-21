@@ -20,5 +20,6 @@ void execvp_err(char **command);
 void malloc_err();
 void cd_err(char **command);
 void ls_err();
+void unexisting_dir();
 
 #endif

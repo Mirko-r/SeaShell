@@ -14,9 +14,12 @@ SOFTWARE.
 
 #ifndef __INPUT_H
 #define __INPUT_H
+#include <stdbool.h>
 
 char **get_input(char *input);
 // Returns 1 (true) if the string includes the substring or else  returns 0 (false)
 int strinclude(char *string, char *substring);
+//chack if a directory exist
+bool is_an_existing_dir(char *path);
 
 #endif

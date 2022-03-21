@@ -17,7 +17,12 @@ SOFTWARE.
 #include <string.h>
 #include <unistd.h>
 #include <dirent.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 #include "../include/command.h"
+#include "../include/input.h"
+#include "../include/errors.h"
 
 #define VERSION "0.0.3-alpha"
 
@@ -28,8 +33,8 @@ void cd(char *path) {
     if (path == NULL){
         chdir (getenv ("HOME"));
     }else if(chdir(path) == -1){
-            cd_err(path);     
-    }
+        cd_err(path);     
+    }    
 }
 
 void function_clear(){
@@ -42,6 +47,11 @@ void pcd(){
     char cwd[1024];
     getcwd(cwd, sizeof(cwd));
     printf("%s\n",cwd);
+}
+
+void mc(char *path){ //mkdir and cd
+    mkdir(path, 0700);
+    cd(path);
 }
 
 void about(){

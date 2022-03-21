@@ -51,6 +51,11 @@ int main() {
             continue;
         }
 
+        if (strcmp(command[0], "mc") == 0) {
+            mc(command[1]); 
+            continue;
+        }
+
         if(strcmp(command[0], "pcd") == 0 || strcmp(command[0], "pwd") == 0){
             printf("\n%sCurrent Dir: %s",BLUE, GREEN);
             pcd();

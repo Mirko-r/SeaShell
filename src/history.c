@@ -13,7 +13,7 @@ SOFTWARE.
 */
 
 #include<stdio.h>
-#include<readline/history.h>\>
+#include<readline/history.h>
 
 void initalize_history(){
     using_history();    /* initialize history */

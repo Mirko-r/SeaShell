@@ -13,7 +13,9 @@ SOFTWARE.
 */
 
 #include<stdio.h>
+#include<stdlib.h>
 #include<readline/history.h>
+#include "../include/history.h"
 
 void initalize_history(){
     using_history();    /* initialize history */

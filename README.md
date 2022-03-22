@@ -1,4 +1,4 @@
-# Csh
+# Seash
 ### A fast and simple UNIX shell in C
 
 ## build
@@ -16,7 +16,7 @@ sudo make install
 | `pcd`| Print Current Directory      |
 | `mc`| mkdir "/some/path" and cd into it      |
 | `bench (numThreads)`| Do a CPU threads bench with specified n° of threads|
-| `about `| Print Csh info       	|
+| `about `| Print Seash info       	|
 
 ## Contributing
 

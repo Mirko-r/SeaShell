@@ -56,11 +56,36 @@ char **get_input(char *input) {
 /**
  *	Displays the prompt for the shell
  */
+char execdir[1000];
+char host[1000];
+char user[1000];
+
 void shellPrompt(){
-	// We print the prompt in the form "<user>@<host> <cwd> >"
-	char hostn[1204] = "";
-	gethostname(hostn, sizeof(hostn));
-	printf("\n%s%s@%s %s%s > ", BLUE, getenv("LOGNAME"), hostn, GREEN, getcwd(NULL, 0));
+	char home[1000];
+    getcwd(home,1000);
+    int flag=0;
+    char changehome[1000]="~";
+    gethostname(host, sizeof(host));
+    int i;
+
+    // Checking for the directory to be printed
+    // Changing home dir to ~
+    if ( strlen(execdir) <= strlen(home) )
+        for( i = 0 ; execdir[i]!='\0' ; i++ ){
+            if( execdir[i] != home[i] ){
+                flag=1;
+                break;
+            }
+        }else
+        flag=1;
+
+    if( flag == 0 ){
+        int j,k;
+        for( j=i , k=1 ; home[j]!='\0' ; j++,k++ )
+            changehome[k] = home[j];
+        printf("\n%s%s@%s: %s%s>",BLUE,getenv("LOGNAME"),host,GREEN,changehome);
+    }else
+        printf("\n%s%s@%s: %s%s>",BLUE,getenv("LOGNAME"),host,GREEN,home);
 }
 
 /* Just a fancy name printing function*/

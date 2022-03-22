@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1)
-project(seash)
+project(seashell)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
@@ -19,8 +19,8 @@ file(GLOB_RECURSE source_files
 
 # csh executable
 add_executable(
-  seash
+  seashell
   ${source_files}
 )
 
-install(TARGETS seash DESTINATION bin)
+install(TARGETS seashell DESTINATION bin)

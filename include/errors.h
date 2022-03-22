@@ -1,5 +1,5 @@
 /*
-Cshell :A fast and simple UNIX shell in C
+Seashell :A fast and simple UNIX shell in C
 
 errors.h : errors.c header file
 

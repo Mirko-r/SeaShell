@@ -1,5 +1,5 @@
 /*
-Cshell :A fast and simple UNIX shell in C
+Seashell :A fast and simple UNIX shell in C
 
 command.c : file for builtin commands
 
@@ -67,7 +67,7 @@ void mc(char *path){ //mkdir and cd
 
 void about(){
     // Source - http://ascii.co.uk/art/seashell
-    char* descr = BLUE"           _.-''|''-._\n        .-'     |     `-.\n      .'\\       |       /`.\n    .'   \\      |      /   `.        "RESET_COLOR "Cshell v "VERSION BLUE"\n    \\     \\     |     /     /        "RESET_COLOR "Made by @Mirko-r\n"BLUE"     `\\    \\    |    /    /'\n       `\\   \\   |   /   /'\n         `\\  \\  |  /  /'\n        _.-`\\ \\ | / /'-._ \n       {_____`\\\\|//'_____}\n               `-'\n\n";
+    char* descr = BLUE"           _.-''|''-._\n        .-'     |     `-.\n      .'\\       |       /`.\n    .'   \\      |      /   `.        "RESET_COLOR "Seashell v "VERSION BLUE"\n    \\     \\     |     /     /        "RESET_COLOR "Made by @Mirko-r\n"BLUE"     `\\    \\    |    /    /'\n       `\\   \\   |   /   /'\n         `\\  \\  |  /  /'\n        _.-`\\ \\ | / /'-._ \n       {_____`\\\\|//'_____}\n               `-'\n\n";
 
     printf("%s",descr);
 }

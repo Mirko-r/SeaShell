@@ -1,5 +1,5 @@
 /*
-Cshell :A fast and simple UNIX shell in C
+Seashell :A fast and simple UNIX shell in C
 
 input.h : input.c header file
 
@@ -17,7 +17,7 @@ SOFTWARE.
 #include <stdbool.h>
 
 char **get_input(char *input);
-char **shellPrompt();
+const char *shellPrompt();
 // Returns 1 (true) if the string includes the substring or else  returns 0 (false)
 int strinclude(char *string, char *substring);
 //chack if a directory exist

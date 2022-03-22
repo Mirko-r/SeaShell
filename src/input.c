@@ -1,5 +1,5 @@
 /*
-Cshell :A fast and simple UNIX shell in C
+Seashell :A fast and simple UNIX shell in C
 
 input.c : file for input processing
 
@@ -28,6 +28,7 @@ SOFTWARE.
 #define BLUE "\x1b[94m"
 #define DEF "\x1B[0m"
 #define CYAN "\x1b[96m"
+#define RESET_COLOR "\e[m"
 
 struct stat st = {0};
 
@@ -60,12 +61,12 @@ char execdir[1000];
 char host[1000];
 char user[1000];
 
-char **shellPrompt(){
+const char *shellPrompt(){
 	char home[1000];
     getcwd(home,1000);
     int flag=0;
     char changehome[1000]="~";
-    char **prompt;
+    char **prompt = malloc(sizeof(char)*4000);
     gethostname(host, sizeof(host));
     int i;
 
@@ -84,9 +85,11 @@ char **shellPrompt(){
         int j,k;
         for( j=i , k=1 ; home[j]!='\0' ; j++,k++ )
             changehome[k] = home[j];
-        prompt = BLUE,getenv("LOGNAME"),"@",host,": ",GREEN,changehome;
+        //prompt = BLUE,getenv("LOGNAME"),"@",host,": ",GREEN,changehome;
+        sprintf(prompt, "\n%s%s@%s: %s%s>%s ",  BLUE,getenv("LOGNAME"),host,GREEN,changehome,RESET_COLOR);
     }else
-     prompt = BLUE,getenv("LOGNAME"),"@",host,": "GREEN,home;
+     //prompt = BLUE,getenv("LOGNAME"),"@",host,": "GREEN,home;
+     sprintf(prompt, "\n%s%s@%s: %s%s>%s ",  BLUE,getenv("LOGNAME"),host,GREEN,changehome,RESET_COLOR);
 
      return prompt;
 }

@@ -53,6 +53,16 @@ char **get_input(char *input) {
     return command;
 }
 
+/**
+ *	Displays the prompt for the shell
+ */
+void shellPrompt(){
+	// We print the prompt in the form "<user>@<host> <cwd> >"
+	char hostn[1204] = "";
+	gethostname(hostn, sizeof(hostn));
+	printf("\n%s%s@%s %s%s > ", BLUE, getenv("LOGNAME"), hostn, GREEN, getcwd(NULL, 0));
+}
+
 /* Just a fancy name printing function*/
 void nameFile(struct dirent* name,char* followup){
     if(name->d_type == DT_REG)          // regular file

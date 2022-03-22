@@ -36,8 +36,12 @@ int main() {
     initalize_history();
 
     while (1) {
+
         printf(RESET_COLOR);
-        input = readline("\nCsh> ");
+        shellPrompt();
+        printf(RESET_COLOR);
+        
+        input = readline("");
 
 	    if(input != NULL) { //check if EOF
 		    command = get_input(input);

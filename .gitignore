@@ -1,7 +1,18 @@
-.DS_Store
+# CMake
 CMakeCache.txt
 CMakeFiles/
+cmake_install.cmake
+
+# building
 build/
 bin/
-cmake_install.cmake
+
+# AUR
+AUR/*
+!AUR/PKGBUILD
+
+# stuff
 *.gif
+
+# Mac stuff
+.DS_Store

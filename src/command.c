@@ -23,8 +23,9 @@ SOFTWARE.
 #include "../include/command.h"
 #include "../include/input.h"
 #include "../include/errors.h"
+#include "../include/benchmark.h"
 
-#define VERSION "0.0.3-alpha"
+#define VERSION "0.0.5-alpha"
 
 #define BLUE "\x1b[94m"
 #define RESET_COLOR "\e[m"
@@ -47,6 +48,16 @@ void pcd(){
     char cwd[1024];
     getcwd(cwd, sizeof(cwd));
     printf("%s\n",cwd);
+}
+
+void bench(char *numofthreads){
+    int thread = 0;
+    if(numofthreads == NULL){
+        flops(1);
+    }else{
+        thread = *numofthreads - '0';
+        flops(thread);
+    }
 }
 
 void mc(char *path){ //mkdir and cd

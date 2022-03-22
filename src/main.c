@@ -32,7 +32,7 @@ int main() {
     char *input;
     pid_t child_pid;
     int stat_loc;
-
+    
     initalize_history();
 
     while (1) {
@@ -45,7 +45,6 @@ int main() {
 	    }else return 0; //^D to exit
 
         //Wich command?
-
         if (strcmp(command[0], "cd") == 0) {
             cd(command[1]); 
             continue;
@@ -59,6 +58,11 @@ int main() {
         if(strcmp(command[0], "pcd") == 0 || strcmp(command[0], "pwd") == 0){
             printf("\n%sCurrent Dir: %s",BLUE, GREEN);
             pcd();
+            continue;
+        }
+
+        if(strcmp(command[0], "bench") == 0){
+            bench(command[1]);
             continue;
         }
         

@@ -9,11 +9,15 @@ set(CMAKE_BUILD_TYPE Release)
 
 set(SRC ${PROJECT_SOURCE_DIR}/src)
 
+set(SRC_AUTOCOMPLETE ${PROJECT_SOURCE_DIR}/CLI-Autocomplete/src)
+
 set(EXECUTABLE_OUTPUT_PATH bin)
 
 # find files
 file(GLOB_RECURSE source_files 
-	${SRC}/*)
+	${SRC}/*
+	${SRC_AUTOCOMPLETE}/*
+)
 
 
 # csh executable

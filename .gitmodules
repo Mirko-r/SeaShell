@@ -1,0 +1,3 @@
+[submodule "CLI-Autocomplete"]
+	path = CLI-Autocomplete
+	url = git@github.com:DieTime/CLI-Autocomplete.git

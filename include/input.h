@@ -17,7 +17,7 @@ SOFTWARE.
 #include <stdbool.h>
 
 char **get_input(char *input);
-void shellPrompt();
+char **shellPrompt();
 // Returns 1 (true) if the string includes the substring or else  returns 0 (false)
 int strinclude(char *string, char *substring);
 //chack if a directory exist

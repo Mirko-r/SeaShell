@@ -60,11 +60,12 @@ char execdir[1000];
 char host[1000];
 char user[1000];
 
-void shellPrompt(){
+char **shellPrompt(){
 	char home[1000];
     getcwd(home,1000);
     int flag=0;
     char changehome[1000]="~";
+    char **prompt;
     gethostname(host, sizeof(host));
     int i;
 
@@ -83,9 +84,11 @@ void shellPrompt(){
         int j,k;
         for( j=i , k=1 ; home[j]!='\0' ; j++,k++ )
             changehome[k] = home[j];
-        printf("\n%s%s@%s: %s%s>",BLUE,getenv("LOGNAME"),host,GREEN,changehome);
+        prompt = BLUE,getenv("LOGNAME"),"@",host,": ",GREEN,changehome;
     }else
-        printf("\n%s%s@%s: %s%s>",BLUE,getenv("LOGNAME"),host,GREEN,home);
+     prompt = BLUE,getenv("LOGNAME"),"@",host,": "GREEN,home;
+
+     return prompt;
 }
 
 /* Just a fancy name printing function*/

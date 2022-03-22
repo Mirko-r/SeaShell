@@ -51,8 +51,8 @@ int main() {
         free(str);
 
         printf(RESET_COLOR);
-        
-        input = readline("");
+
+        input = readline(shellPrompt());
 
 	if(input != NULL) { //check if EOF
 		command = get_input(input);

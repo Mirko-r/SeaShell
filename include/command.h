@@ -20,6 +20,7 @@ void function_clear();
 void pcd();
 void bench(char *numofthreads);
 void mc(char *path); //mkdir and cd
+void cp(char* file1, char* file2);
 void about();
 
 #endif

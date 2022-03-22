@@ -30,9 +30,6 @@ SOFTWARE.
 #define CYAN "\x1b[96m"
 #define RESET_COLOR "\e[m"
 
-struct stat st = {0};
-
-
 char **get_input(char *input) {
     char **command = malloc(8 * sizeof(char *));
     if (command == NULL) {
@@ -113,6 +110,8 @@ void nameFile(struct dirent* name,char* followup){
 int strinclude(char *string, char *substring){
     return strstr(string, substring) ? true : false;
 }
+
+struct stat st = {0};
 
 bool is_an_existing_dir(char *path){
     if(stat(path, &st) == -1){

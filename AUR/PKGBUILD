@@ -1,0 +1,27 @@
+# Maintainer: koraynilay <koray.fra@gmail.com>
+pkgname=seashell
+pkgver=0.1
+pkgrel=1
+pkgdesc="A Fast and Simple UNIX shell in C"
+arch=(x86_64)
+url="https://github.com/mirko-r/seashell"
+license=('MIT')
+depends=('readline')
+makedepends=('cmake' 'make')
+source=("git+$url")
+md5sums=("SKIP")
+build() {
+	cd "${srcdir}/${pkgname}"
+	mkdir build
+	cd build
+	cmake ..
+	make
+}
+
+package() {
+	cd "${srcdir}/${pkgname}/build"
+	DESTDIR="$pkgdir/" make install
+
+	# install license
+	install -D -m644 "${srcdir}/${pkgname}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname/-git$/}/LICENSE"
+}

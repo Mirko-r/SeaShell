@@ -12,11 +12,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "../include/benchmark.h"
-#include <stdio.h>
-#include <pthread.h>
-#include <stdlib.h>
-#define ITERATIONS 10000000
+#include "../include/seashell.h"
 
 // thread function to calculate Flops
 void *threadFunctionFlop(void *arg){

@@ -12,23 +12,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-#include <dirent.h>
-#include <stdbool.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include "../include/input.h"
-#include "../include/errors.h"
-
-#define GREEN "\x1b[92m"
-#define BLUE "\x1b[94m"
-#define DEF "\x1B[0m"
-#define CYAN "\x1b[96m"
-#define RESET_COLOR "\e[m"
+#include "../include/seashell.h"
 
 char **get_input(char *input) {
     char **command = malloc(8 * sizeof(char *));

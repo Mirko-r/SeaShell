@@ -12,24 +12,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-#include <dirent.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include "../include/command.h"
-#include "../include/input.h"
-#include "../include/errors.h"
-#include "../include/benchmark.h"
-
-#define VERSION "0.0.5-alpha"
-
-#define BLUE "\x1b[94m"
-#define RESET_COLOR "\e[m"
+#include "../include/seashell.h"
 
 void cd(char *path) {
     if (path == NULL){

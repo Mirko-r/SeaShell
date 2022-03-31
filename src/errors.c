@@ -12,12 +12,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include "../include/errors.h"
-
-#define CYAN "\x1b[96m"
+#include "../include/seashell.h"
 
 void fork_err(){
     perror(CYAN "+--- Error in fork");

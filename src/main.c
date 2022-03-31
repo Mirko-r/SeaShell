@@ -12,20 +12,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <readline/readline.h>
-#include <unistd.h>
-#include <sys/wait.h>
-#include "../include/input.h"
-#include "../include/errors.h"
-#include "../include/command.h"
-#include "../include/history.h"
-
-#define RESET_COLOR "\e[m"
-#define GREEN "\x1b[92m"
-#define BLUE "\x1b[94m"
+#include "../include/seashell.h"
 
 int main() {
     char **command;

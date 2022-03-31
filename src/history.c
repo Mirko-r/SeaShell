@@ -12,10 +12,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<readline/history.h>
-#include "../include/history.h"
+#include "../include/seashell.h"
 
 void initalize_history(){
     using_history();    /* initialize history */

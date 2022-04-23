@@ -23,7 +23,7 @@ SOFTWARE.
 #include <sys/wait.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include<readline/history.h>
+#include <readline/history.h>
 #include <readline/readline.h>
 #include <stdbool.h>
 #include "../include/command.h"
@@ -33,8 +33,10 @@ SOFTWARE.
 #include "../include/history.h"
 
 #define ITERATIONS 10000000 //benchmark
-#define VERSION "0.0.5-alpha"
+#define VERSION "0.0.5-alpha" 
 
+
+// colors
 #define GREEN "\x1b[92m"
 #define DEF "\x1B[0m"
 #define BLUE "\x1b[94m"

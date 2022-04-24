@@ -33,7 +33,7 @@ SOFTWARE.
 #include "../include/history.h"
 
 #define ITERATIONS 10000000 //benchmark
-#define VERSION "0.0.5-alpha" 
+#define VERSION "0.0.6-alpha" 
 
 
 // colors
